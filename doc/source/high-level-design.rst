@@ -150,10 +150,6 @@ a concrete reference implementation using SQLAlchemy:
 
 .. graphviz:: database.dot
 
-.. image:: img/schema.svg
-   :width: 660px
-   :align: center
-   :alt: ER model
 
 TODO(jimbaker): implementation of the inventory concepts is a work in
 progress, however, the above schema represents the current
