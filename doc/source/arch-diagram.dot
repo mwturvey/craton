@@ -77,7 +77,13 @@ digraph structs {
   <TR>
   <TD PORT="TfJobBoard"><font face="Helvetica" point-size="12">TF<br/>JobBoard<br/></font>
   </TD>
-  <TD PORT="WaLogCapture"><font face="Helvetica" point-size="12">WA Log<br/>Capture<br/></font>
+  <TD PORT="WaLogCapture" bgcolor="#D6DBDF"><font face="Helvetica" point-size="12">WA Log<br/>Capture<br/></font>
+  </TD>
+  </TR>
+  <TR>
+  <TD ><font face="Helvetica" point-size="12">TF<br/>Worker<br/>Pool<br/></font>
+  </TD>
+  <TD bgcolor="#D7BDE2"><font face="Helvetica" point-size="12" >ZooKeeper<br/></font>
   </TD>
   </TR>
 
@@ -98,7 +104,7 @@ digraph structs {
 
     HistoryPlugin [label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-  <TR><TD PORT="HistoryPlugin"><font face="Helvetica" point-size="12">History Plugin<br/><font point-size="8">
+  <TR><TD PORT="HistoryPlugin" bgcolor="#D6DBDF"><font face="Helvetica" point-size="12">History Plugin<br/><font point-size="8">
     (Inventory)</font></font>
   </TD></TR>
 </TABLE>>];
@@ -109,6 +115,24 @@ digraph structs {
     (Workflow)</font></font>
   </TD></TR>
 </TABLE>>];
+
+    HistoricalData [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD PORT="HistoricalData" bgcolor="#D6DBDF"><font face="Helvetica" point-size="12">Historica lData</font>
+  </TD></TR>
+</TABLE>>];
+
+
+    Legend [label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+  <TR><TD><font face="Helvetica" point-size="12">Legend</font>
+  </TD></TR>
+  <TR><TD border="1" bgcolor="#D7BDE2"><font face="Helvetica" point-size="10">Used For Scaling</font>
+  </TD></TR>
+  <TR><TD border="1" bgcolor="#D6DBDF"><font face="Helvetica" point-size="10">Future Work</font>
+  </TD></TR>
+</TABLE>>];
+
 
 
 //UndercloudIntegrations [pos="1,1"];
@@ -125,8 +149,11 @@ ranksep=.25;
 
 #{ rank = same; UndercloudIntegrations; CratonCore; }
 #Horizon -> Keystone [style=invis]
-#Keystone -> Barbican [style=invis]
+NovaPlugin -> Legend [style=invis];
+CratonCore:Barbican -> Legend [style=invis];
 
+    CratonCore:WaLogCapture -> HistoricalData:HistoricalData;
+    HistoryPlugin:HistoryPlugin -> HistoricalData:HistoricalData;
     CratonCore:Horizon -> PythonApi:PythonApi [constraint=false]; 
     CratonCore:RBAC -> CratonCore:Keystone;
     PythonApi:PythonApi -> CratonCore:RestApi;
