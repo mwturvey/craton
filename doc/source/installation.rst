@@ -2,16 +2,19 @@
 Installation
 ============
 
-Pip
----
-At the command line::
+Basic Install
+-------------
 
-    $ pip install craton
+(Optional) install virtualenv if desired::
 
-Virtualenvwrapper
------------------
+	$ mkvirtualenv craton
+	$ pip install -r /craton/requirements.txt
+	$ python setup.py install
 
-Or, if you have virtualenvwrapper installed::
+Setup Developer Environment 
+---------------------------
 
-    $ mkvirtualenv craton
-    $ pip install craton
+.. toctree::
+   :maxdepth: 1
+
+   ./dev/install 
