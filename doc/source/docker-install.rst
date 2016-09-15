@@ -40,10 +40,10 @@ Installing necessary packages: Fedora/CentOS etc.
 
     $ git clone https://github.com/openstack/craton.git
 
-* Follow the correct Docker install guide for your operating system:
+* Follow the correct Docker install guide for your operating system::
 
-	Fedora: https://docs.docker.com/engine/installation/linux/fedora/
-	CentOS: https://docs.docker.com/engine/installation/linux/centos/
+    Fedora: https://docs.docker.com/engine/installation/linux/fedora/
+    CentOS: https://docs.docker.com/engine/installation/linux/centos/
 
 
 --------------------------------------------------------
